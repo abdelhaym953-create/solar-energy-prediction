@@ -5,3 +5,4 @@ plotly==5.24.1
 matplotlib
 scikit-learn
 joblib
+lightgbm
