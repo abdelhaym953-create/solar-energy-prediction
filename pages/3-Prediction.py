@@ -120,9 +120,14 @@ with col_in:
     # ── Time ───────────────────────────────────────────────────────────────────
     st.markdown('<div class="input-card"><div class="input-card-title">⏰ Time</div>', unsafe_allow_html=True)
 
-    current_time = st.time_input("Current Time", value=dtime(12, 0))
-    sunrise_time = st.time_input("Sunrise", value=dtime(6, 13))
-    sunset_time  = st.time_input("Sunset", value=dtime(18, 13))
+    c1, c2, c3 = st.columns(3)
+
+    with c1:
+        current_time = st.time_input("🕐 Current Time", value=dtime(12, 0))
+    with c2:
+        sunrise_time = st.time_input("🌅 Sunrise", value=dtime(6, 13))
+    with c3:
+        sunset_time  = st.time_input("🌇 Sunset", value=dtime(18, 13))
     
     # auto-calculate derived features
     cur_min = time_to_minutes(current_time)
