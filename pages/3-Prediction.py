@@ -120,14 +120,10 @@ with col_in:
     # ── Time ───────────────────────────────────────────────────────────────────
     st.markdown('<div class="input-card"><div class="input-card-title">⏰ Time</div>', unsafe_allow_html=True)
 
-    c1, c2, c3 = st.columns(3)
-    with c1:
-        current_time = st.time_input("🕐 Current Time", value=dtime(12, 0))
-    with c2:
-        sunrise_time = st.time_input("🌅 Sunrise", value=dtime(6, 13))
-    with c3:
-        sunset_time  = st.time_input("🌇 Sunset",  value=dtime(18, 13))
-
+    current_time = st.time_input("Current Time", value=dtime(12, 0))
+    sunrise_time = st.time_input("Sunrise", value=dtime(6, 13))
+    sunset_time  = st.time_input("Sunset", value=dtime(18, 13))
+    
     # auto-calculate derived features
     cur_min = time_to_minutes(current_time)
     sun_min = time_to_minutes(sunrise_time)
@@ -231,7 +227,7 @@ with col_out:
             paper_bgcolor="#0d1117", font_color="#c9d1d9",
             height=250, margin=dict(t=20, b=10, l=30, r=30),
         )
-       # st.plotly_chart(fig_gauge, use_container_width=True)
+        st.plotly_chart(fig_gauge, use_container_width=True)
 
         # context chips
         pct      = min(100, round(pred / 1601 * 100, 1))
