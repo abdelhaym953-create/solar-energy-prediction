@@ -231,7 +231,7 @@ with col_out:
             paper_bgcolor="#0d1117", font_color="#c9d1d9",
             height=250, margin=dict(t=20, b=10, l=30, r=30),
         )
-        st.plotly_chart(fig_gauge, use_container_width=True)
+       # st.plotly_chart(fig_gauge, use_container_width=True)
 
         # context chips
         pct      = min(100, round(pred / 1601 * 100, 1))
